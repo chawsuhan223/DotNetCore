@@ -1,8 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using DotNetCore.AdoDotNetExamples;
 using System.Data;
 using System.Data.SqlClient;
 
-Console.WriteLine("Hello, World!");
+/*Console.WriteLine("Hello, World!");
 
 //F5 Run
 //Ctrl+k+c
@@ -11,6 +12,8 @@ Console.WriteLine("Hello, World!");
 //Ctrl + .
 //Break point  F9
 //Shift + F5  => stop
+//F10 step by step run
+//F11 => skip
 
 #region Read
 SqlConnectionStringBuilder sqlConnectionStringBuilder = new SqlConnectionStringBuilder();
@@ -52,8 +55,46 @@ Console.WriteLine("Connection Opening...");
 SQLConnection.Open();
 Console.WriteLine("Connection Opened...");
 
+//data set (2 Table / 3 Table)/ data table/ data row / data column
+string GetData = @"SELECT  [BlogId]
+      ,[BlogTitle]
+      ,[BlogAuthor]
+      ,[BlogContent]
+  FROM [TestDb].[dbo].[Tbl_Blog]";// stored data from DataBase
+
+SqlCommand OpenDb = new SqlCommand(GetData, SQLConnection); //Open (SQLConnection => BlogId,BlogTitle,BlogAuthor,BlogContent)  Use Connection
+SqlDataAdapter StoreDb = new SqlDataAdapter(OpenDb);//Get Data From OpenDb
+DataTable NewDt = new DataTable();//Create New Data Table
+StoreDb.Fill(NewDt);
+
+
 Console.WriteLine("Connection Closing...");
 SQLConnection.Close();
 Console.WriteLine("Connection Closed...");
+
+foreach (DataRow DR in NewDt.Rows)
+{
+    Console.WriteLine("ID .." + DR["BlogId"]);
+    Console.WriteLine("Title .." + DR["BlogTitle"]);
+    Console.WriteLine("Author .." + DR["BlogAuthor"]);
+    Console.WriteLine("Content .." + DR["BlogContent"]);
+
+
+}
+*/
+
+
+AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
+//adoDotNetExample.Read();
+//adoDotNetExample.Edit(id:1);
+//adoDotNetExample.Edit(id:13);
+//adoDotNetExample.Create("Test Title","Test Author","Test Content");
+//adoDotNetExample.Update(12,"Test Title2 ","Test Author2", "Test Content2");
+adoDotNetExample.Delete(11);
+
+
+
+
+
 
 Console.ReadKey();
