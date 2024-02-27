@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using DotNetCore.AdoDotNetExamples;
+using DotNetCore.DapperExamples;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -83,15 +84,23 @@ foreach (DataRow DR in NewDt.Rows)
 }
 */
 
-
-AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
+//Testing For AdoDotNet
+//AdoDotNetExample adoDotNetExample = new AdoDotNetExample();
 //adoDotNetExample.Read();
 //adoDotNetExample.Edit(id:1);
 //adoDotNetExample.Edit(id:13);
 //adoDotNetExample.Create("Test Title","Test Author","Test Content");
 //adoDotNetExample.Update(12,"Test Title2 ","Test Author2", "Test Content2");
-adoDotNetExample.Delete(11);
+//adoDotNetExample.Delete(11);
 
+//Testing For Dapper
+DapperExample dapperExample = new DapperExample();
+//dapperExample.Read();
+//dapperExample.Edit(id: 1);
+//dapperExample.Edit(id: 13);
+//dapperExample.Create("Test Title3","Test Author3","Test Content3");
+//dapperExample.Update(5,"Test Title5 ","Test Author5", "Test Content5");
+dapperExample.Delete(13);
 
 
 
