@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using DotNetCore.AdoDotNetExamples;
 using DotNetCore.DapperExamples;
+using DotNetCore.EFCoreExamples;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -94,13 +95,22 @@ foreach (DataRow DR in NewDt.Rows)
 //adoDotNetExample.Delete(11);
 
 //Testing For Dapper
-DapperExample dapperExample = new DapperExample();
+//DapperExample dapperExample = new DapperExample();
 //dapperExample.Read();
 //dapperExample.Edit(id: 1);
 //dapperExample.Edit(id: 13);
 //dapperExample.Create("Test Title3","Test Author3","Test Content3");
 //dapperExample.Update(5,"Test Title5 ","Test Author5", "Test Content5");
-dapperExample.Delete(13);
+//dapperExample.Delete(13);
+
+//Testing For EFCore
+EFCoreExample eFCoreExample = new EFCoreExample();
+//eFCoreExample.Read();
+//eFCoreExample.Edit(id: 1);
+//eFCoreExample.Edit(id: 13);
+//eFCoreExample.Create("Test EF2", "Test EF2", "Test EF2");
+//eFCoreExample.Update(15, "Test EF3", "Test EF3", "Test EF3");
+eFCoreExample.Delete(15);
 
 
 

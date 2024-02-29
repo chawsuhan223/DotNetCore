@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +10,10 @@ using System.Threading.Tasks;
 //Multi modify & select Ctrl + d
 namespace DotNetCore.Models
 {
+    [Table("Tbl_Blog")]//equal Tbl_Blog
     public class BlogModel
     {
+        [Key]
         public int BlogId { get; set; }
         public string BlogTitle { get; set; }
 
