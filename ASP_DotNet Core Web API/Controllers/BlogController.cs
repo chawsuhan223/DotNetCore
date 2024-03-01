@@ -30,6 +30,20 @@ namespace ASP_DotNet_Core_Web_API.Controllers
 
         }//Read
 
+        [HttpGet("{id}")]//Get Method 
+        public IActionResult GetBlog(int id)//public void Read()
+        {
+            BlogModel item = _db.Blogs.FirstOrDefault(item => item.BlogId == id);
+
+            if (item == null)
+            {
+                Console.WriteLine("No Data Found");
+                return NotFound();//404 Not Found
+            }
+            return Ok(item);
+
+        }
+
         [HttpPost]//Create
         public IActionResult CreateBlogs(BlogModel blog)//public void Create()
         {
