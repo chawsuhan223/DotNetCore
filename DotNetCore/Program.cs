@@ -2,6 +2,7 @@
 using DotNetCore.AdoDotNetExamples;
 using DotNetCore.DapperExamples;
 using DotNetCore.EFCoreExamples;
+using DotNetCore.HTTP_Client_Examples;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -104,13 +105,22 @@ foreach (DataRow DR in NewDt.Rows)
 //dapperExample.Delete(13);
 
 //Testing For EFCore
-EFCoreExample eFCoreExample = new EFCoreExample();
+//EFCoreExample eFCoreExample = new EFCoreExample();
 //eFCoreExample.Read();
 //eFCoreExample.Edit(id: 1);
 //eFCoreExample.Edit(id: 13);
 //eFCoreExample.Create("Test EF2", "Test EF2", "Test EF2");
 //eFCoreExample.Update(15, "Test EF3", "Test EF3", "Test EF3");
-eFCoreExample.Delete(15);
+//eFCoreExample.Delete(15);
+
+
+//Console.WriteLine("Waiting For API....");
+//Console.ReadKey();
+
+
+//Testing For HTTPClientExample
+HTTPClientExample hTTPClientExample = new HTTPClientExample();
+await hTTPClientExample.Run();
 
 
 
