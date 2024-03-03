@@ -22,5 +22,13 @@ namespace DotNetCore.Models
         public string BlogContent { get; set; }
 
     }
+public class jSonPlaceholder
+{
+    public int blogId { get; set; }
+    public string blogTitle { get; set; }
+    public string blogAuthor { get; set; }
+    public string blogContent { get; set; }
+}
+
 
 }
